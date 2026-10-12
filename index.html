@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Бей посуду</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Neucha&family=Unbounded:wght@600;800&family=Manrope:wght@500;700&display=swap">
+  </head>
+  <body>
+    <div class="app" id="app" data-loc="kitchen">
+      <canvas id="c" aria-label="Смахни посуду вверх, чтобы разбить её о стену"></canvas>
+      <div class="top">
+        <div>
+          <h1>Бей посуду</h1>
+          <p class="sub">Напиши то, что гложет, и разбей это о стену.</p>
+          <div class="locs" role="group" aria-label="Где бьём">
+            <button class="loc" type="button" data-loc="kitchen" aria-pressed="true">Кухня</button>
+            <button class="loc" type="button" data-loc="showroom" aria-pressed="false">Maserati</button>
+            <button class="loc" type="button" data-loc="roof" aria-pressed="false">Крыша</button>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="count">разбито<b id="count">0</b></div>
+          <div class="tools">
+            <button class="ghost" id="sweep" type="button">Подмести</button>
+            <button class="ghost" id="mute" type="button">Звук: вкл</button>
+          </div>
+        </div>
+      </div>
+      <div class="toast" id="toast" aria-live="polite"></div>
+      <div class="combo" id="combo" aria-hidden="true"></div>
+      <div class="note" id="note" role="dialog" aria-labelledby="note-text" hidden>
+        <small>Записка для тебя</small>
+        <p id="note-text"></p>
+        <button type="button" id="note-close">Обнять в ответ</button>
+      </div>
+      <div class="tray">
+        <div class="dishes" role="group" aria-label="Что бросаем">
+          <button class="chip" type="button" data-dish="plate" aria-pressed="true">Тарелка</button>
+          <button class="chip" type="button" data-dish="bowl" aria-pressed="false">Миска</button>
+          <button class="chip" type="button" data-dish="saucer" aria-pressed="false">Блюдце</button>
+          <button class="chip" type="button" data-dish="mug" aria-pressed="false">Кружка</button>
+          <button class="chip" type="button" data-dish="glass" aria-pressed="false">Стакан</button>
+          <button class="chip" type="button" data-dish="wine" aria-pressed="false">Бокал</button>
+          <button class="chip" type="button" data-dish="vase" aria-pressed="false">Ваза</button>
+          <button class="chip" type="button" data-dish="teapot" aria-pressed="false">Чайник</button>
+        </div>
+        <form id="form" autocomplete="off">
+          <input id="thought" maxlength="70" placeholder="Например: завтра дедлайн" aria-label="Мысль для посуды">
+          <button class="throw" type="submit">Разбить</button>
+        </form>
+        <p class="hint">Смахни посуду вверх. Тапни по осколкам или по котикам, когда они заглянут.</p>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
